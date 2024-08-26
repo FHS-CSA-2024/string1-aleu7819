@@ -9,7 +9,7 @@ public class String1
         System.out.println(s.helloName("Bob"));
         System.out.println(s.makeAbba("Hi", "Bye"));
         System.out.println(s.makeTags("i", "Yay"));
-        System.out.println(s.makeOutWord("<<>>", "Yay"));
+        System.out.println(s.makeOutWord("<<>>", "Word"));
         System.out.println(s.extraEnd("Hello"));
         System.out.println(s.firstTwo("Hello"));
         System.out.println(s.withoutEnd("Hello"));
@@ -38,7 +38,7 @@ public class String1
      *  helloName("X") â†’ "Hello X!"
      */
     public String helloName(String name) {
-        return "Hello " + name + "!";
+        return "Hello " + name + "!"; //done
     }
 
     /*
@@ -49,7 +49,7 @@ public class String1
      * makeAbba("What", "Up") â†’ "WhatUpUpWhat"
      */
     public String makeAbba(String a, String b) {
-        return a + b + b +a;
+        return a + b + b +a; //done
     }
 
     /*
@@ -61,7 +61,7 @@ public class String1
      * makeTags("cite", "Yay") â†’ "<cite>Yay</cite>"
      */
     public String makeTags(String tag, String word) {
-        return 
+        return "<" + tag + ">" + word + "</" + tag + ">"; // ADD BRACKETS (the right way?)
     }
 
     /*
@@ -75,7 +75,7 @@ public class String1
      * makeOutWord("[[]]", "word") â†’ "[[word]]"
      */
     public String makeOutWord(String out, String word) {
-        return unimplemented;
+        return out.substring(0, 2) + word + out.substring(3, 5); //done
     }
 
     /*
