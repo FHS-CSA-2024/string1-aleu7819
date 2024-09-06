@@ -1,3 +1,4 @@
+
 package src.main.java;
 
 public class String1
@@ -49,7 +50,7 @@ public class String1
      * makeAbba("What", "Up") â†’ "WhatUpUpWhat"
      */
     public String makeAbba(String a, String b) {
-        return a + b + b +a; //done
+        return a + b + b + a; //done
     }
 
     /*
@@ -61,7 +62,7 @@ public class String1
      * makeTags("cite", "Yay") â†’ "<cite>Yay</cite>"
      */
     public String makeTags(String tag, String word) {
-        return "<" + tag + ">" + word + "</" + tag + ">"; // ADD BRACKETS (the right way?)
+        return "<" + tag + ">" + word + "</" + tag + ">"; //done
     }
 
     /*
@@ -75,7 +76,7 @@ public class String1
      * makeOutWord("[[]]", "word") â†’ "[[word]]"
      */
     public String makeOutWord(String out, String word) {
-        return out.substring(0, 2) + word + out.substring(3, 5); //done
+    return out.substring(0, 2) + word + out.substring(2); //done
     }
 
     /*
@@ -86,7 +87,8 @@ public class String1
      * extraEnd("Hi") â†’ "HiHiHi"
      */
     public String extraEnd(String str) {
-        return unimplemented;
+        String lastChar = str.substring(3);
+        return lastChar + lastChar + lastChar; //done
     }
 
     /*
@@ -99,8 +101,14 @@ public class String1
      * firstTwo("ab") â†’ "ab"
      */
     public String firstTwo(String str) {
-        return unimplemented;
-    }
+        if (str.length() < 2) {
+            return str;
+        }
+        else {
+            return str.substring(0,2); //done
+        }
+        }
+    
 
     /*
      * Given a string of even length, return the first half. So the string "WooHoo" yields "Woo".]
@@ -109,7 +117,7 @@ public class String1
      * firstHalf("abcdef") â†’ "abc"
      */
     public String firstHalf(String str) {
-        return unimplemented;
+        return str.substring(0, str.length() / 2); //done
     }
 
     /*
