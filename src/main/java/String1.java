@@ -128,7 +128,7 @@ public class String1
      * withoutEnd("coding") â†’ "odin"
      */
     public String withoutEnd(String str) {
-        return unimplemented;
+        return str.substring(1, str.length() - 1); //done
     }
 
     /*
@@ -140,10 +140,19 @@ public class String1
      * comboString("aaa", "b") â†’ "baaab"
      */
     public String comboString(String a, String b) {
-        return unimplemented;
+        String shortString;
+        String longString;
+        if (a.length() < b.length()) {
+        shortString = a;
+        longString = b;
+    } else {
+        shortString = b;
+        longString = a;
+    }
+         return shortString + longString + shortString; //done
     }
 
-    /*
+        /*
      * Given a string of odd length, return the string length 3 from its middle, so "Candy" yields "and". 
      * The string length will be at least 3.
      * middleThree("Candy") â†’ "and"
@@ -151,7 +160,8 @@ public class String1
      * middleThree("solving") â†’ "lvi"
      */
     public String middleThree(String str) {
-        return unimplemented;
+    int middle = str.length() / 2 - 1;
+    return str.substring(middle, middle + 3); //done
     }
 
     /*
@@ -162,7 +172,12 @@ public class String1
      * extraFront("H") â†’ "HHH"
      */
     public String extraFront(String str) {
-        return unimplemented;
+        if (str.length() > 2) {
+        String longerWord = str.substring(0,2);
+        return longerWord + longerWord + longerWord;
+    } else {
+        return str + str + str; //done
+    }
     }
 
     /*
@@ -173,7 +188,13 @@ public class String1
      * left2("Hi") â†’ "Hi"
      */
     public String left2(String str) {
-        return unimplemented;
+        if (str.length() >= 2) {
+        String left = str.substring(0,2);
+        String original = str.substring(2);
+        return original + left;
+    } else {
+        return str; //done
+    }
     }
 
     /*
@@ -185,7 +206,15 @@ public class String1
      * hasBad("xxbadxx") â†’ false
      */
     public boolean hasBad(String str) {
-        return false;
+    if (str.substring(0, 3).equals("bad")) {
+            return true;
+        }
+    if (str.substring(1, 4).equals("bad")) {
+            return true;
+        }
+        else {
+            return false; //done
+        }
     }
 
     /*
@@ -197,8 +226,13 @@ public class String1
      * conCat("abc", "") â†’ "abc"
      */
     public String conCat(String a, String b) {
-        return unimplemented;
+    if (a.charAt(a.length() - 1) == b.charAt(0)) {
+        return a + b.substring(1);
+    } else {
+        return a + b; //done
     }
+    }
+    
 
     /*
      *Given two strings, append them together (known as "concatenation") and return the result. 
@@ -211,10 +245,21 @@ public class String1
      *minCat("java", "Hello") â†’ "javaello"
      */
     public String minCat(String a, String b) {
-        return unimplemented;
+    int minLength = Math.min(a.length(), b.length());
+    
+    String one;
+    String two;
+    if (a.length() > b.length()) {
+        one = a.substring(a.length() - minLength);
+        two = b;
+    } else {
+        one = a;
+        two = b.substring(b.length() - minLength);
+    }
+    return one + two; //done 
     }
 
-    /*
+     /*
      * Given a string, if the first or last chars are 'x', return the string without those 'x' chars, 
      * and otherwise return the string unchanged.
      * withoutX("xHix") â†’ "Hi"
@@ -222,8 +267,18 @@ public class String1
      * withoutX("Hxix") â†’ "Hxi"
      */
     public String withoutX(String str) {
-        return unimplemented;
+        if (str.charAt(0) == 'x') {
+        str = str.substring(1);
     }
+    if (str.charAt(str.length() - 1) == 'x') {
+        str = str.substring(0, str.length() - 1);
+        }
+        else {
+             str = str; //done
+        }
+        return str;
+    }
+    
 
     /*
      * Given a string, return a version without the first 2 chars. 
@@ -235,7 +290,16 @@ public class String1
      * deFront("away") â†’ "aay"
      */
     public String deFront(String str) {    
-        return unimplemented;
+        if (str.charAt(0) == 'x') {
+        str = str.substring(1);
+    }
+    if (str.charAt(str.length() - 1) == 'x') {
+        str = str.substring(0, str.length() - 1);
+        }
+        else {
+             str = str;
+        }
+        return str.substring(2); //done
     }
 
 }
